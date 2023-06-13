@@ -14,7 +14,7 @@ export class EntriesService {
   }
 
   findOne(id: number) {
-    const entry = this.repository.find({ where: { id: id } });
+    const entry = this.repository.findOne({ where: { id: id } });
     if (!entry) {
       throw new NotFoundException(`Entry #${id} not found`);
     }
