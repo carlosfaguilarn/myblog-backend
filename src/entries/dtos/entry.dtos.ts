@@ -16,4 +16,8 @@ export class CreateEntryDto {
   @IsString()
   @IsNotEmpty()
   readonly contentText: string;
+
+  @IsString()
+  @IsNotEmpty()
+  readonly image: string;
 }

@@ -16,4 +16,7 @@ export class Entry {
 
   @Column({ type: 'text' })
   contentText: string;
+
+  @Column({ type: 'text', nullable: true })
+  image: string;
 }
