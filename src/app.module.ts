@@ -4,7 +4,6 @@ import * as Joi from 'joi';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-
 import { DatabaseModule } from './database/database.module';
 import { enviroments } from './enviroments';
 import config from './config';
@@ -22,23 +21,10 @@ import { EntriesModule } from './entries/entries.module';
         DATABASE_PORT: Joi.number().required(),
       }),
     }),
-    //HttpModule,
     EntriesModule,
     DatabaseModule,
   ],
   controllers: [AppController],
-  providers: [
-    AppService,
-    /* {
-      provide: 'TASKS',
-      useFactory: async (http: HttpService) => {
-        const tasks = await http
-          .get('https://jsonplaceholder.typicode.com/todos')
-          .toPromise();
-        return tasks.data;
-      },
-      inject: [HttpService],
-    }, */
-  ],
+  providers: [AppService],
 })
 export class AppModule {}
